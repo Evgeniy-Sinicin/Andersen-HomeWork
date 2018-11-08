@@ -1,4 +1,4 @@
-function getCity() {
+function getWeather() {
     var city = document.getElementById("city").value;
 
     var xml = new XMLHttpRequest();
