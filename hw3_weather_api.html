@@ -17,18 +17,15 @@
     </div>
 
     <script>
-
-
         function getCity() {
-            var cityName = document.getElementById("city").value;
+            var city = document.getElementById("city").value;
 
             var xml = new XMLHttpRequest();
-            xml.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&APPID=d0a795441d5c7d4d04fe04fe36727f8f&units=metric", false);
+            xml.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=d0a795441d5c7d4d04fe04fe36727f8f&units=metric", false);
             xml.send();
 
             var data = JSON.parse(xml.response);
 
-            var city = JSON.stringify(data.name);
             var weather = data.weather[0].main;
             var temp = data.main.temp;
             var wind = data.wind.speed;
