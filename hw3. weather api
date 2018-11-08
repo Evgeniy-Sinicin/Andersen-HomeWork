@@ -6,13 +6,16 @@
 </head>
 
 <body>
-    <!-- <div id="weather" style="width: 1000px; height: 500px;"></div> -->
-    <input id="city" maxlength="25" size="20" value="">
-    <button onclick="getCity();">Тык</button>
-    <p>Location: <span id="location"></span></p>
-    <p>Weather: <span id="weather"></span></p>
-    <p>Temperature: <span id="temp"></span></p>
-    <p>Wind Speed: <span id="wind"></span></p>
+    <label for="city">Enter your city and press the button</label><Br>
+    <input id="city" maxlength="25" size="20">
+    <button onclick="getCity();">Button</button>
+    <div id="content" style="display: none">
+        <p>Location: <span id="location"></span></p>
+        <p>Weather: <span id="weather"></span></p>
+        <p>Temperature: <span id="temp"></span></p>
+        <p>Wind Speed: <span id="wind"></span></p>
+    </div>
+
     <script>
 
 
@@ -33,8 +36,9 @@
 
             document.getElementById("location").innerHTML = city;
             document.getElementById("weather").innerHTML = weather;
-            document.getElementById("temp").innerHTML = temp;
-            document.getElementById("wind").innerHTML = wind;
+            document.getElementById("temp").innerHTML = temp + " °C";
+            document.getElementById("wind").innerHTML = wind + " km/h";
+            document.getElementById("content").style.display = "block";
         }
     </script>
 </body>
